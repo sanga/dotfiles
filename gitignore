@@ -13,6 +13,7 @@ tmp/**/*
 *.pyc
 *.pyo
 *~
+.cache
 deb_dist
 DEADJOE
 .#*
