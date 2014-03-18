@@ -90,14 +90,8 @@ _nosetests()
     cur="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=(`nosecomplete ${cur} 2>/dev/null`)
 }
-_nose2()
-{
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=(`nose2complete ${cur} 2>/dev/null`)
-}
 
 complete -o nospace -F _nosetests nosetests
-complete -o nospace -F _nose2 nose2
 
 man() {
         env \
