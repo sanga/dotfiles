@@ -72,26 +72,24 @@ source $ZSH/oh-my-zsh.sh
 export LESS=' -R '
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export PATH=$PATH:$HOME/bin
-export GOROOT=$HOME/usr/local/go
-export GOPATH=$HOME/Code/go_have_fun
-export PATH=$PATH:/$GOROOT/bin
-export WORKON_HOME=$HOME/.virtualenvs
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/Code/go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:~/bin
 export PROJECT_HOME=$HOME/Code
-source /usr/local/bin/virtualenvwrapper.sh
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+export LANGUAGE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 autoload -U compinit
 compinit
 
 autoload -U bashcompinit
 bashcompinit
-
-_nosetests()
-{
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=(`nosecomplete ${cur} 2>/dev/null`)
-}
-
-complete -o nospace -F _nosetests nosetests
 
 man() {
         env \
