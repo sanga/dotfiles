@@ -29,6 +29,7 @@
 [core]
   excludesfile = ~/.gitignore
   trustctime = false
+  editor = vim
 [merge]
   tool = vimdiff
 [include]
