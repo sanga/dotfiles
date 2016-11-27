@@ -16,4 +16,5 @@ tmp/**/*
 .cache
 deb_dist
 DEADJOE
+.idea
 .#*
