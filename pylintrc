@@ -1,9 +1,141 @@
+[MASTER]
+
+# Add files or directories to the blacklist. They should be base names, not
+# paths.
+ignore=.git,libs,vendor
+
+load-plugins=pylint-plugins/see_numpy,pylint-plugins/schema
+
 [MESSAGES CONTROL]
-disable=E1002,R0914,I0011,E1101,R0903,R0913,R0904,C0111,C0103,W0511,W0142,C0301,W0102,W0141,W0311,W0312,W0402,W0611,W0621,W0622,W0631,W0232,R0912,R0915,W0613,F0401,C0322,C0324,W0703,W0612,R0902,C0321,W0403,W0603,W0702,W0301,C0302,W0602,R0911,W0212,R0901,W0201,C0323,R0922,W0221,W0223,R0921
+
+disable=
+    apply-builtin,
+    basestring-builtin,
+    buffer-builtin,
+    cmp-builtin,
+    cmp-method,
+    coerce-builtin,
+    coerce-method,
+    delslice-method,
+    dict-iter-method, # iterkeys(), itervalues(), iteritems()
+    dict-view-method, # viewkeys(), viewvalues(), viewitems()
+    execfile-builtin,
+    file-builtin,
+    filter-builtin-not-iterating,
+    fixme, # comment containing FIXME, XXX, or TODO
+    getslice-method,
+    indexing-exception, # x[0] instead of x.args[0] when x is an exception
+    input-builtin,
+    intern-builtin,
+    invalid-name,
+    locally-disabled, # disable= used
+    long-builtin,
+    long-suffix, # e.g. 123l or 123L
+    map-builtin-not-iterating,
+    metaclass-assignment,
+    missing-docstring,
+    next-method-called, # x.next() instead of next(x)
+    no-absolute-import, # lack of 'from __future__ import absolute_import'
+    nonzero-method,
+    oct-method,
+    old-division, # unfloored int division without
+                  # 'from __future__ import division'
+    pointless-except, # except: pass
+    print-statement,
+    raw_input-builtin,
+    reduce-builtin,
+    reload-builtin,
+    round-builtin,
+    setslice-method,
+    standarderror-builtin,
+    too-few-public-methods,
+    too-many-ancestors,
+    too-many-arguments,
+    too-many-branches,
+    too-many-instance-attributes,
+    too-many-locals,
+    too-many-public-methods,
+    too-many-return-statements,
+    too-many-statements,
+    unichr-builtin,
+    unicode-builtin,
+    using-cmp-argument,
+    wrong-import-order,
+    xrange-builtin,
+    zip-builtin-not-iterating
+
 
 [REPORTS]
+
 # Set the output format. Available formats are text, parseable, colorized, msvs
-# (visual studio) and html
-output-format=colorized
-# Include message's id in output
-include-ids=yes
+# (visual studio) and html. You can also give a reporter class, eg
+# mypackage.mymodule.MyReporterClass.
+output-format=text
+
+# Tells whether to display a full report or only the messages
+reports=no
+
+msg-template={C}:{line:3d},{column:2d}:{symbol}: {obj}: {msg}
+
+
+[FORMAT]
+
+max-line-length=100
+max-module-lines=1000
+
+# Regexp for a line that is allowed to be longer than the limit.
+ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+
+# List of optional constructs for which whitespace checking is disabled
+no-space-check=trailing-comma,dict-separator
+
+# Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
+expected-line-ending-format=LF
+
+
+[BASIC]
+
+# Colon-delimited sets of names that determine each other's naming style when
+# the name regexes allow several styles.
+name-group=
+
+# Regular expression matching correct function names
+function-rgx=[a-z_][a-z0-9_]{2,40}$
+
+# Regular expression matching correct variable names
+variable-rgx=[A-Za-z_][A-Za-z0-9_]{0,30}$
+
+# Regular expression matching correct constant names
+const-rgx=(([A-Z_][A-Za-z0-9_]*)|(__.*__))$
+
+# Regular expression matching correct attribute names
+attr-rgx=[a-z_][a-z0-9_]{0,30}$
+
+# Regular expression matching correct argument names
+argument-rgx=[A-Za-z_][a-z0-9_]{0,30}$
+
+# Regular expression matching correct class attribute names
+class-attribute-rgx=([A-Za-z_][A-Za-z0-9_]{0,30}|(__.*__))$
+
+# Regular expression matching correct inline iteration names
+inlinevar-rgx=[A-Za-z_][A-Za-z0-9_]*$
+
+# Regular expression matching correct class names
+class-rgx=[A-Z_][a-zA-Z0-9]+$
+
+# Regular expression matching correct module names
+module-rgx=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
+
+# Regular expression matching correct method names
+method-rgx=[a-z_][a-z0-9_]{1,40}$
+
+
+[SIMILARITIES]
+
+min-similarity-lines=8
+ignore-imports=yes
+
+[TYPECHECK]
+
+# pylint currently can't find members of numpy
+ignored-modules = numpy
