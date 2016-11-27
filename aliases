@@ -5,6 +5,8 @@ alias lh='ls -Alh'
 alias -g G='| grep'
 alias -g M='| less'
 alias -g L='| wc -l'
-
+alias compose='docker-compose'
+alias machine='docker-machine'
+alias swarm='docker-swarm'
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
