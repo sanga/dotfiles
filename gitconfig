@@ -26,7 +26,8 @@
   branchbydate = for-each-ref --sort=-committerdate refs/heads/
   wdiff = diff --word-diff=color
   wshow = show --word-diff=color
-  authors = shortlog -sn
+  authorslist = shortlog -sn --no-merges
+  prstash = "!f() { git fetch $1 refs/pull-requests/$2/from:$3; } ; f"
 [core]
   excludesfile = ~/.gitignore
   trustctime = false
