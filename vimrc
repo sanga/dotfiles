@@ -55,7 +55,12 @@ augroup vimrc_autocmds
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
-
+" Pylint configuration file
+let g:pymode_lint_config = '$HOME/.pylintrc'
+let g:pymode_options_max_line_length = 100
+let g:pymode_lint_options_pep8 =
+         \ {'max_line_length': g:pymode_options_max_line_length}
+let g:syntastic_python_pylint_post_args="--max-line-length=120"
 " Python-mode
 " Activate rope
 " Keys:
