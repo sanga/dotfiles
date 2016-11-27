@@ -39,6 +39,22 @@ Bundle 'Yggdroot/indentLine'
 let g:CommandTCancelMap = "<Esc>"
 call vundle#end()            " required
 
+" plugins I've had previously:
+" Plugin 'auto-pairs'
+" Plugin 'matchit.zip'
+" Plugin 'python.vim'
+" Plugin 'pythoncomplete'
+" Plugin 'rust.vim'
+" Plugin 'tagbar'
+" Plugin 'vim-bufferline'
+" Plugin 'vim-css3-syntax'
+" Plugin 'vim-coloresque'
+" Plugin 'vim-colors'
+" Plugin 'vim-colors-solarized'
+" Plugin 'vim-easymotion'
+" Plugin 'vim-json'
+" Plugin 'vim-markdown'
+" Plugin 'vim-yaml'
 filetype plugin indent on
 
 let g:airline_theme='solarized'
