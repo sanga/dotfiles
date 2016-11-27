@@ -4,23 +4,44 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
+set background=dark
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
-" The bundles you install will be listed here
-Bundle 'Lokaltog/powerline'
-Bundle 'klen/python-mode'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'pangloss/vim-javascript'
-Bundle 'https://github.com/wincent/Command-T'
-let g:CommandTCancelMap = "<Esc>"
-Bundle 'rbgrouleff/bclose.vim'
+" solarized options (for iterm2 on mac)
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+let g:solarized_termcolors = 16
+
+set relativenumber
+set number
+
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'klen/python-mode'
+Bundle 'jremmen/vim-ripgrep'
+Bundle 'pangloss/vim-javascript'
+Bundle 'rbgrouleff/bclose.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'sjl/gundo.vim'
+Bundle 'Glench/Vim-Jinja2-Syntax'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+Bundle 'vim-syntastic/syntastic'
+Bundle 'Yggdroot/indentLine'
+let g:CommandTCancelMap = "<Esc>"
 call vundle#end()            " required
 
 filetype plugin indent on
 
+let g:airline_theme='solarized'
 " The rest of your config follows here
 
 augroup vimrc_autocmds
@@ -49,7 +70,7 @@ set laststatus=2
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
 let g:pymode_rope = 0
-
+set rtp+=/usr/local/opt/fzf
 :let mapleader = ","
 map <leader>g <C-]>
 
@@ -81,7 +102,7 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
-let g:pymode_folding = 0
+let g:pymode_folding = 1
 
 syntax on
 
@@ -90,7 +111,7 @@ set backspace=eol,start,indent
 set incsearch
 set hidden
 
-colorscheme fruity
+colorscheme solarized
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
