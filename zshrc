@@ -49,9 +49,12 @@ alias mmv='noglob zmv -W'
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # Path to your oh-my-zsh configuration.
-plugins=(git github python pip history-substring-search)
+plugins=(git github httpie docker docker-compose python pip history-substring-search brew vi-mode)
 ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME=pygmalion #bira # jreese might be better
+#export ZSH_THEME=agnoster #pygmalion #bira # jreese might be better
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(docker_machine virtualenv status vi_mode)
 source $ZSH/oh-my-zsh.sh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
