@@ -39,6 +39,9 @@ setopt CORRECT CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
