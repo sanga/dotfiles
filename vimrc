@@ -18,7 +18,6 @@ set relativenumber
 set number
 
 Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'klen/python-mode'
 Bundle 'jremmen/vim-ripgrep'
