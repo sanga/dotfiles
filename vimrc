@@ -19,10 +19,13 @@ set number
 
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'gavocanov/vim-js-indent'
 Bundle 'klen/python-mode'
 Bundle 'jremmen/vim-ripgrep'
+Bundle 'othree/yajs.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rbgrouleff/bclose.vim'
+Bundle 'sickill/vim-pasta'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'Glench/Vim-Jinja2-Syntax'
