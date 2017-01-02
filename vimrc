@@ -9,50 +9,45 @@ let g:solarized_termcolors = 16
 set relativenumber
 set number
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
-
 set background=dark
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-Bundle 'Chiel92/vim-autoformat'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'gavocanov/vim-js-indent'
-Bundle 'klen/python-mode'
-Bundle 'jremmen/vim-ripgrep'
-Bundle 'othree/yajs.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'rbgrouleff/bclose.vim'
-Bundle 'sickill/vim-pasta'
-Bundle 'sjl/gundo.vim'
-Bundle 'Glench/Vim-Jinja2-Syntax'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'vim-syntastic/syntastic'
-Bundle 'Yggdroot/indentLine'
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'Chiel92/vim-autoformat'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'gavocanov/vim-js-indent'
+Plug 'klen/python-mode'
+Plug 'jremmen/vim-ripgrep'
+Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'sickill/vim-pasta'
+Plug 'sjl/gundo.vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-syntastic/syntastic'
+Plug 'Yggdroot/indentLine'
 " plugins I've had previously:
-" Plugin 'auto-pairs'
-" Plugin 'matchit.zip'
-" Plugin 'python.vim'
-" Plugin 'pythoncomplete'
-" Plugin 'rust.vim'
-" Plugin 'tagbar'
-" Plugin 'vim-bufferline'
-" Plugin 'vim-css3-syntax'
-" Plugin 'vim-coloresque'
-" Plugin 'vim-colors'
-" Plugin 'vim-colors-solarized'
-" Plugin 'vim-easymotion'
-" Plugin 'vim-json'
-" Plugin 'vim-markdown'
-" Plugin 'vim-yaml'
-call vundle#end()            " required
+" Plug 'auto-pairs'
+" Plug 'matchit.zip'
+" Plug 'python.vim'
+" Plug 'pythoncomplete'
+" Plug 'rust.vim'
+" Plug 'tagbar'
+" Plug 'vim-bufferline'
+" Plug 'vim-css3-syntax'
+" Plug 'vim-coloresque'
+" Plug 'vim-colors'
+" Plug 'vim-colors-solarized'
+" Plug 'vim-easymotion'
+" Plug 'vim-json'
+" Plug 'vim-markdown'
+" Plug 'vim-yaml'
+call plug#end()
 
 let g:CommandTCancelMap = "<Esc>"
 filetype plugin indent on
