@@ -1,14 +1,6 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
-
-set background=dark
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
 " solarized options (for iterm2 on mac)
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
@@ -17,6 +9,14 @@ let g:solarized_termcolors = 16
 set relativenumber
 set number
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+
+set background=dark
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+Bundle 'Chiel92/vim-autoformat'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'gavocanov/vim-js-indent'
@@ -26,21 +26,16 @@ Bundle 'othree/yajs.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rbgrouleff/bclose.vim'
 Bundle 'sickill/vim-pasta'
-Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'vim-syntastic/syntastic'
 Bundle 'Yggdroot/indentLine'
-let g:CommandTCancelMap = "<Esc>"
-call vundle#end()            " required
-
 " plugins I've had previously:
 " Plugin 'auto-pairs'
 " Plugin 'matchit.zip'
@@ -57,6 +52,9 @@ call vundle#end()            " required
 " Plugin 'vim-json'
 " Plugin 'vim-markdown'
 " Plugin 'vim-yaml'
+call vundle#end()            " required
+
+let g:CommandTCancelMap = "<Esc>"
 filetype plugin indent on
 
 let g:airline_theme='solarized'
@@ -124,7 +122,6 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
-" Don't autofold code
 let g:pymode_folding = 1
 
 syntax on
