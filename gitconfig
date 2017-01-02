@@ -31,9 +31,11 @@
 [core]
   excludesfile = ~/.gitignore
   trustctime = false
-  editor = vim
+  editor = nvim
 [merge]
   tool = vimdiff
+[mergetool]
+  path = nvim
 [include]
   path = .gitconfig.local
 [diff]
