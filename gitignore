@@ -18,3 +18,4 @@ deb_dist
 DEADJOE
 .idea
 .#*
+.ipynb_checkpoints
