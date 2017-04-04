@@ -41,6 +41,7 @@ setopt EXTENDED_GLOB
 
 autoload -U zmv
 alias mmv='noglob zmv -W'
+alias vim='/usr/local/bin/nvim'
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases

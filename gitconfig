@@ -36,6 +36,9 @@
   tool = vimdiff
 [mergetool]
   path = nvim
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [include]
   path = .gitconfig.local
 [diff]
