@@ -17,6 +17,9 @@ Plug 'flazz/vim-colorschemes'
 Plug 'gavocanov/vim-js-indent'
 Plug 'klen/python-mode'
 Plug 'jremmen/vim-ripgrep'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'neomake/neomake' | Plug 'dojoteef/neomake-autolint'
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rbgrouleff/bclose.vim'
@@ -24,13 +27,15 @@ Plug 'sickill/vim-pasta'
 Plug 'sjl/gundo.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'scrooloose/nerdtree'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'Yggdroot/indentLine'
+Plug 'zchee/deoplete-jedi'
 " plugins I've had previously:
 " Plug 'auto-pairs'
 " Plug 'matchit.zip'
@@ -48,7 +53,9 @@ Plug 'Yggdroot/indentLine'
 " Plug 'vim-markdown'
 " Plug 'vim-yaml'
 call plug#end()
-
+let g:formatters_python = ['yapf']
+let g:fmrmatter_yapf_style = 'pep8'
+noremap <F3> :Autoformat<CR>
 let g:CommandTCancelMap = "<Esc>"
 filetype plugin indent on
 
@@ -63,9 +70,14 @@ augroup vimrc_autocmds
     autocmd FileType python set nowrap
     augroup END
 
+let g:highlightedyank_highlight_duration = 100
+
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
+" Python completion config
+let g:python3_host_prog = '/usr/local/Cellar/python3/3.5.2_1/Frameworks/Python.framework/Versions/3.5/bin/python3'
+let g:deoplete#enable_at_startup = 1
 " Pylint configuration file
 let g:pymode_lint_config = '$HOME/.pylintrc'
 let g:pymode_options_max_line_length = 100
@@ -99,7 +111,13 @@ let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
 let g:pymode_lint_write = 1
+" moaw python linting (this time with neomake)
+let g:neomake_python_enabled_makers = ['flake8']
+" E501 is line length of 80 characters
+let g:neomake_python_flake8_maker = { 'args': ['--ignore=E115,E266,E501'], }
 
+" run neomake on the current file on every write:
+autocmd! BufWritePost * Neomake
 " Enable breakpoints plugin
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_key = '<leader>b'
